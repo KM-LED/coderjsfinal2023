@@ -24,9 +24,13 @@ const getProducts = async () => {
     let comprar = document.createElement("button");
     comprar.innerText = "Lo Quiero";
     comprar.className = "comprar";
-
     content.append(comprar);
+    
 
+   
+   
+   
+   
     comprar.addEventListener("click", () => {
       const repeat = carrito.some(
         (repeatProduct) => repeatProduct.id === product.id
@@ -45,6 +49,18 @@ const getProducts = async () => {
           precio: product.precio,
           cantidad: product.cantidad,
         });
+
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Producto Agergado al carrito",
+          showConfirmButton: false,
+          timer: 2000,
+        });
+      
+      
+      
+      
       }
       console.log(carrito);
       contadorCarrito();
