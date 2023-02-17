@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "nombre": "USB OPEN DMX",
+    "precio": 18000,
+    "img": "img/open.jpg",
+    "cantidad": 1
+  },
+
+  {
+    "id": 2,
+    "nombre": "USB DMX OPTO",
+    "precio": 23000,
+    "img": "img/opto.jpg",
+    "cantidad": 1
+  },
+
+  {
+    "id": 3,
+    "nombre": "SPLITTER DMX 2 OUT",
+    "precio": 22000,
+    "img": "img/sp2out.jpg",
+    "cantidad": 1
+  },
+
+  {
+    "id": 4,
+    "nombre": "SPLITTER DMX 4 OUT",
+    "precio": 38000,
+    "img": "img/sp4out.jpg",
+    "cantidad": 1
+  },
+
+  {
+    "id": 5,
+    "nombre": "RGB DMX 7CH",
+    "precio": 16500,
+    "img": "img/7ch.jpg",
+    "cantidad": 1
+  },
+
+  {
+    "id": 6,
+    "nombre": "RGB DMX 17CH",
+    "precio": 26500,
+    "img": "img/17ch.jpg",
+    "cantidad": 1
+  }
+]
