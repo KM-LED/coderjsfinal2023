@@ -17,9 +17,8 @@ const fetcNasa = async () => {
 
     infoNasa.append(spaceInfo);
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
-
-  };
+};
 
 fetcNasa();

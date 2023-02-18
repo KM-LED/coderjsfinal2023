@@ -25,12 +25,7 @@ const getProducts = async () => {
     comprar.innerText = "Lo Quiero";
     comprar.className = "comprar";
     content.append(comprar);
-    
 
-   
-   
-   
-   
     comprar.addEventListener("click", () => {
       const repeat = carrito.some(
         (repeatProduct) => repeatProduct.id === product.id
@@ -57,10 +52,6 @@ const getProducts = async () => {
           showConfirmButton: false,
           timer: 2000,
         });
-      
-      
-      
-      
       }
       console.log(carrito);
       contadorCarrito();
@@ -68,7 +59,6 @@ const getProducts = async () => {
     });
   });
 };
-
 getProducts();
 
 const saveLocal = () => {

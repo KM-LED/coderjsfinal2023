@@ -7,11 +7,6 @@ const armarCarrito = () => {
   <h1 class= "modal-header-title">Productos</h1>`;
   modalContainer.append(modalHeader);
 
- 
- 
- 
- 
- 
   const modalbutton = document.createElement("h1");
   modalbutton.innerText = "x";
   modalbutton.className = "modal-header-button";
@@ -91,24 +86,20 @@ const armarCarrito = () => {
 
   ComprarTodo.addEventListener("click", () => {
     Swal.fire({
-      title: "Desea comprar el carrito ?",
-      showDenyButton: true,
-
+      title: "Desea comprar el carrito?",
+      icon: "success",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
       confirmButtonText: "SI",
-      denyButtonText: `NO`,
+      cancelButtonText: "SEGUIR COMPRANDO",
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        Swal.fire("Gracias por tu compra!!", "", "success");
-        armarCarrito();
-      } else if (result.isDenied) {
-        Swal.fire("Hasta la proxima", "", "success");
+        window.open("https://www.mercadopago.com.ar");
       }
     });
   });
 };
-
-
 
 verCarrito.addEventListener("click", armarCarrito);
 
@@ -133,6 +124,4 @@ const contadorCarrito = () => {
   cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
 };
 
-
 contadorCarrito();
-
