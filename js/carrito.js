@@ -7,6 +7,11 @@ const armarCarrito = () => {
   <h1 class= "modal-header-title">Productos</h1>`;
   modalContainer.append(modalHeader);
 
+ 
+ 
+ 
+ 
+ 
   const modalbutton = document.createElement("h1");
   modalbutton.innerText = "x";
   modalbutton.className = "modal-header-button";
@@ -46,6 +51,7 @@ const armarCarrito = () => {
         });
       }
       saveLocal();
+      contadorCarrito();
       armarCarrito();
     });
 
@@ -61,6 +67,7 @@ const armarCarrito = () => {
       });
 
       saveLocal();
+      contadorCarrito();
       armarCarrito();
     });
 
@@ -81,6 +88,7 @@ const armarCarrito = () => {
   ComprarTodo.className = "comprarCarrito";
   ComprarTodo.innerHTML = `COMPRAR CARRITO`;
   modalContainer.append(ComprarTodo);
+
   ComprarTodo.addEventListener("click", () => {
     Swal.fire({
       title: "Desea comprar el carrito ?",
@@ -92,12 +100,15 @@ const armarCarrito = () => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         Swal.fire("Gracias por tu compra!!", "", "success");
+        armarCarrito();
       } else if (result.isDenied) {
         Swal.fire("Hasta la proxima", "", "success");
       }
     });
   });
 };
+
+
 
 verCarrito.addEventListener("click", armarCarrito);
 
@@ -115,11 +126,13 @@ const eliminarProducto = (id) => {
 const contadorCarrito = () => {
   cantidadCarrito.style.display = "block";
 
-  const carritolength = carrito.length;
+  const totalElemsCarrito = carrito.reduce((acc, el) => acc + el.cantidad, 0);
 
-  localStorage.setItem("carritoLength", JSON.stringify(carritolength));
+  localStorage.setItem("carritoLength", JSON.stringify(totalElemsCarrito));
 
   cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
 };
 
+
 contadorCarrito();
+
